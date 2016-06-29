@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelFPS_Git.CSharp", "PixelFPS_Git.CSharp.csproj", "{1B9793AC-C21E-4A60-3BA1-F39DB31D00FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelFPS_Git.CSharp.Editor", "PixelFPS_Git.CSharp.Editor.csproj", "{3B708BE6-5F1D-5ED0-D7B2-390D70397255}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B9793AC-C21E-4A60-3BA1-F39DB31D00FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B9793AC-C21E-4A60-3BA1-F39DB31D00FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B9793AC-C21E-4A60-3BA1-F39DB31D00FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B9793AC-C21E-4A60-3BA1-F39DB31D00FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B708BE6-5F1D-5ED0-D7B2-390D70397255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B708BE6-5F1D-5ED0-D7B2-390D70397255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B708BE6-5F1D-5ED0-D7B2-390D70397255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B708BE6-5F1D-5ED0-D7B2-390D70397255}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

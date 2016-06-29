@@ -3,6 +3,8 @@ using System.Collections;
 
 public class RotateScript : MonoBehaviour {
 
+    public Vector3 rotDirection;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -10,6 +12,6 @@ public class RotateScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(new Vector3(0, 2, 0));
+            transform.Rotate(rotDirection);
 	}
 }
