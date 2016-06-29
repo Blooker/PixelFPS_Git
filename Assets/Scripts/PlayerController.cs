@@ -73,8 +73,10 @@ public class PlayerController : MonoBehaviour {
     void ShootLaser () {
         Ray ray = new Ray(playerCam.transform.position, playerCam.transform.forward);
         RaycastHit hit;
+        Vector3 shootPointRot = shootPoint.transform.rotation.eulerAngles;
+        Vector3 laserRot = new Vector3(shootPointRot.x - 0.5f, shootPointRot.y, shootPointRot.z);
 
-        GameObject newLaser = Instantiate(laserBeam, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
+        GameObject newLaser = Instantiate(laserBeam, shootPoint.transform.position, Quaternion.Euler(laserRot)) as GameObject;
 
         if (Physics.Raycast(ray, out hit, 100))
             newLaser.transform.LookAt(hit.point, Vector3.up);

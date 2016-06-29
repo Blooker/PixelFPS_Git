@@ -19,14 +19,21 @@ public class SphereScript : MonoBehaviour {
 	}
 
     IEnumerator blinkLoop () {
-        yield return new WaitForSeconds(4f);
-        StartCoroutine(blink());
+        for (int i = 0; i < 2; i++) {
+            yield return new WaitForSeconds(4f);
+            StartCoroutine(blink(i));
+        }
+        StartCoroutine(blinkLoop());
     }
 
-    IEnumerator blink () {
-        sphereMat.material.mainTexture = faces[1];
-        yield return new WaitForSeconds(0.3f);
+    IEnumerator blink (int faceToChange) {
+        if (faceToChange == 0) {
+            sphereMat.material.mainTexture = faces[1];
+            yield return new WaitForSeconds(0.3f);
+        } else {
+            sphereMat.material.mainTexture = faces[2];
+            yield return new WaitForSeconds(1.5f);
+        }
         sphereMat.material.mainTexture = faces[0];
-        StartCoroutine(blinkLoop());
     }
 }
