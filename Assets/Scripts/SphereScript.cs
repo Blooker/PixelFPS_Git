@@ -33,6 +33,8 @@ public class SphereScript : MonoBehaviour {
         } else {
             sphereMat.material.mainTexture = faces[2];
             yield return new WaitForSeconds(1.5f);
+            sphereMat.material.mainTexture = faces[1];
+            yield return new WaitForSeconds(0.3f);
         }
         sphereMat.material.mainTexture = faces[0];
     }

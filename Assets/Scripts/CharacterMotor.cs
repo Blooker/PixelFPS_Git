@@ -33,6 +33,10 @@ public class CharacterMotor : MonoBehaviour {
         camRotationX = _camRotationX;
     }
 
+    public void PerformJump(float _jumpForce) {
+        rb.AddForce(Vector3.up * _jumpForce);
+    }
+
     // Update is called once per physics tick
     void FixedUpdate () {
         PerformMovement();

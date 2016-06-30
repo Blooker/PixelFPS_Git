@@ -8,9 +8,14 @@ public class PlayerController : MonoBehaviour {
     private float speed = 5f;
     [SerializeField]
     private float lookSensitivity = 3f;
+
+    [SerializeField]
+    private float jumpForce = 10f;
+    [SerializeField]
+    float maxSlope = 60f;
+
     [SerializeField]
     private Text sensitivityTextBox;
-
     [SerializeField]
     private GameObject shootPoint;
     [SerializeField]
@@ -21,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 
     private CharacterMotor motor;
     private string mouseSensText;
+    private bool isFalling;
 
     // Use this for initialization
     void Start () {
@@ -32,6 +38,11 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         MoveAndLook();
+
+        if (!isFalling && Input.GetAxis("Jump") > 0) {
+            motor.PerformJump(jumpForce);
+            isFalling = true;
+        }
 
         if (Input.GetButtonDown("Fire1")) {
             ShootLaser();
@@ -89,4 +100,25 @@ public class PlayerController : MonoBehaviour {
         sensitivityTextBox.text = mouseSensText;
     }
 
+    void OnCollisionEnter(Collision collision) {
+        foreach (ContactPoint c in collision.contacts) {
+            //if (c.otherCollider.tag == walkableTag)
+            isFalling = false;
+        }
+    }
+
+    void OnCollisionExit () {
+        isFalling = true;
+    }
+
+    /*void OnCollisionStay(Collision coll) {
+        foreach (ContactPoint contact in coll.contacts) {
+            if (Vector3.Angle(contact.normal, Vector3.up) < maxSlope)
+                isFalling = false;
+        }
+    }
+
+    void OnCollisionExit () {
+        isFalling = true;
+    }*/
 }
