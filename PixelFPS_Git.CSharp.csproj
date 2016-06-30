@@ -62,14 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CamMouseLook.cs" />
-    <Compile Include="Assets\Scripts\CharacterMotor.cs" />
-    <Compile Include="Assets\Scripts\FloorScript.cs" />
-    <Compile Include="Assets\Scripts\GameStart.cs" />
-    <Compile Include="Assets\Scripts\LaserScript.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\RotateScript.cs" />
-    <Compile Include="Assets\Scripts\SphereScript.cs" />
+    <Compile Include="Assets\Scripts\FPS_Scene\CamMouseLook.cs" />
+    <Compile Include="Assets\Scripts\FPS_Scene\CharacterMotor.cs" />
+    <Compile Include="Assets\Scripts\FPS_Scene\FloorScript.cs" />
+    <Compile Include="Assets\Scripts\FPS_Scene\GameStart.cs" />
+    <Compile Include="Assets\Scripts\FPS_Scene\LaserScript.cs" />
+    <Compile Include="Assets\Scripts\FPS_Scene\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\FPS_Scene\RotateScript.cs" />
+    <Compile Include="Assets\Scripts\FPS_Scene\SphereScript.cs" />
+    <Compile Include="Assets\Scripts\PlanetsScene\PlanetScript.cs" />
     <Compile Include="Assets\kode80\ExtensionMethods\Color32Extensions.cs" />
     <Compile Include="Assets\kode80\PixelRender\Examples\Shooter\Scripts\AutoScroll.cs" />
     <Compile Include="Assets\kode80\PixelRender\Examples\Shooter\Scripts\Bullet.cs" />
