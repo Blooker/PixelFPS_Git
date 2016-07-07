@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PlanetsScene.unity
+- path: Assets/FPS_Scene.unity
   isLoaded: 1
   isActive: 1

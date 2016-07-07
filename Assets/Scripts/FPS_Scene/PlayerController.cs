@@ -88,9 +88,17 @@ public class PlayerController : MonoBehaviour {
         Vector3 laserRot = new Vector3(shootPointRot.x - 0.5f, shootPointRot.y, shootPointRot.z);
 
         GameObject newLaser = Instantiate(laserBeam, shootPoint.transform.position, Quaternion.Euler(laserRot)) as GameObject;
+        GameObject newLaserPivot = newLaser.transform.GetChild(0).gameObject;
 
-        if (Physics.Raycast(ray, out hit, 100))
+        if (Physics.Raycast(ray, out hit, 100)) {
             newLaser.transform.LookAt(hit.point, Vector3.up);
+            float laserDist = Vector3.Distance(newLaserPivot.transform.position, hit.point);
+            Debug.Log("Laser Pivot Global: " + newLaserPivot.transform.position.ToString());
+            Debug.Log("Laser Pivot Local: " + newLaser.transform.localPosition.ToString());
+            Debug.Log("Hit point: " + hit.point.ToString());
+            Debug.Log("Distance: " + laserDist.ToString());
+            newLaserPivot.transform.localScale = new Vector3(0.2f, 0.2f, laserDist);
+        }
 
         Debug.Log(ray.GetPoint(100));
     }
@@ -100,7 +108,7 @@ public class PlayerController : MonoBehaviour {
         sensitivityTextBox.text = mouseSensText;
     }
 
-    void OnCollisionEnter(Collision collision) {
+    void OnCollisionStay(Collision collision) {
         foreach (ContactPoint c in collision.contacts) {
             //if (c.otherCollider.tag == walkableTag)
             isFalling = false;
@@ -110,15 +118,4 @@ public class PlayerController : MonoBehaviour {
     void OnCollisionExit () {
         isFalling = true;
     }
-
-    /*void OnCollisionStay(Collision coll) {
-        foreach (ContactPoint contact in coll.contacts) {
-            if (Vector3.Angle(contact.normal, Vector3.up) < maxSlope)
-                isFalling = false;
-        }
-    }
-
-    void OnCollisionExit () {
-        isFalling = true;
-    }*/
 }
